@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<br>
+
+<h1>Systems</h1>
+<ul class="list-group">
+	{% for system in systems %}
+		<li class = "list-group-item"><a href = "systems/{{ systems.name }}">{{system.name}}</a></li>
+	{% endfor %}
+</ul>
+
+{% endblock%}
