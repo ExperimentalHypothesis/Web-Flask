@@ -18,23 +18,28 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="nav-link" href="/home">Home</a> <span class="sr-only">(current)</span></li>
                     <li class="nav-item"><a class="nav-link" href="/about">About</a><span class="sr-only">(current)</span></li>
-                    <li class="nav-item"><a class="nav-link" href="/systems">Systems</a><span class="sr-only">(current)</span></li>
-
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/runnningsystems" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Running systems
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/systems" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Systems
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="#">System One</a>
-                          <a class="dropdown-item" href="#">System Two</a>
-                          <a class="dropdown-item" href="#">System Three</a>
+                          <a class="dropdown-item" href="#">Live</a>
+                          <a class="dropdown-item" href="#">Sim</a>
                         </div>
-                      </li> -->
+                      </li>
                     </ul>
 
                 <ul class="navbar-nav navbar-right">
-                    <li class="nav-item"><a class="nav-link" href="/register">Login</a></li>
+                    {% if session.logged_in %}
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                    <li class="nav-item"><a class= "btn btn-outline-primary" href="/dashboard">Dashboard</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li> 
+                        <li class="nav-item"><a class="btn btn-outline-primary" href="/dashboard">Dashboard</a></li>
+                    {% endif %}
                 </ul>
+
             </div>
         </div>
     </nav>

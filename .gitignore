@@ -1,4 +1,6 @@
 *.pyc
-.config.py
+settings.json
+config.py
 geckodriver
 geckodriver.log
+_____________testovaci.html
